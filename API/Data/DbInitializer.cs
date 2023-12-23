@@ -97,7 +97,7 @@ namespace API.Data
                     Name = "Grimon Savignon Blanc",
                     Description = "Hacienda Grimon Savignon Blanc er en hvidvin lavet på den druen Sauvignon blanc, giver en smagsfuld blød og dejlig hvidvin med en god struktur. Vinen har en frisk, ung lys farve. Vinens duft har noter af citrus, ananas eller melon, blandet med salt og en frisk aroma. Smagen er frisk og udpræget frugtrig og er præget af en god balance mellem frugten og de mineralske nuancer. Eftersmagen er lang og behagelig. Den har en afbalanceret syre, fremhæver sin aromatiske kraft i ganen, efterlader en frisk og aromatisk fornemmelse med en ren og vedvarende finish. Kan serveres med alle former for fisk og skaldyr eller ganske enkelt som en forfriskning på en sommerdag på terrassen. Serveringstemperatur: 10-12° C. 12,5% vol.",
                     Price = 7900,
-                    PictureUrl = "/images/products/GSavignonBlanc.png",
+                    PictureUrl = "/images/products/HSavignonBlanc.png",
                     Brand = "Hacienda",
                     Type = "Hvidvin",
                     QuantityInStock = 120
