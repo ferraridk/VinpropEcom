@@ -19,7 +19,7 @@ import {
   addBasketItemAsync,
   removeBasketItemAsync,
 } from "../basket/basketSlice";
-import { fetchProductAsync, productSelectors } from "./CatalogSlice";
+import { fetchProductAsync, productSelectors } from "./catalogSlice";
 
 export default function ProductDetails() {
   const { id } = useParams<{ id: string }>();
