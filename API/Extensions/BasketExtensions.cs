@@ -1,5 +1,7 @@
+using System.Security.Cryptography.X509Certificates;
 using API.DTOs;
 using API.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Extensions;
 
@@ -22,5 +24,10 @@ public static class BasketExtensions
                 Quantity = item.Quantity
             }).ToList()
         };
+    }
+
+    public static IQueryable<Basket> RetrieveBasketWithItems(this IQueryable<Basket> query, string BuyerId)
+    {
+        return query.Include(i => i.Items).ThenInclude(p => p.Product).Where(b => b.BuyerId == BuyerId);
     }
 }
