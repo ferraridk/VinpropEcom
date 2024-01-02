@@ -14,6 +14,11 @@ import { useAppDispatch } from "../store/configureStore";
 import { fetchBasketAsync } from "../../features/basket/basketSlice";
 import { fetchCurrentUser } from "../../features/account/accountSlice";
 
+<meta
+    http-equiv="Content-Security-Policy"
+    content="font-src * 'unsafe-inline';"
+/>
+
 function App() {
   const dispatch = useAppDispatch();
   const [loading, setLoading] = useState(true);
