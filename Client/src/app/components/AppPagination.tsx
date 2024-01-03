@@ -9,8 +9,18 @@ interface Props {
 export default function AppPagination({ metaData, onPageChange }: Props) {
   const { currentPage, totalCount, totalPages, pageSize } = metaData;
   return (
-    <Box display="flex" justifyContent="space-between" alignItems="center">
-      <Typography>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        backgroundColor: "rgba(168, 142, 105, 1.9)",
+        borderRadius: "20px",
+        padding: "10px",
+        boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)", 
+      }}
+    >
+      <Typography sx={{ color: "#9c27b0" }}>
         Viser {(currentPage - 1) * pageSize + 1}-
         {currentPage * pageSize > totalCount
           ? totalCount

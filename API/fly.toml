@@ -1,0 +1,27 @@
+# fly.toml app configuration file generated for vinproppen on 2024-01-03T23:51:23+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "vinproppen"
+primary_region = "arn"
+
+[build]
+  image = "henrikferrari/vinproppen:latest"
+
+[env]
+  ASPNETCORE_URLS = "http://+:8080"
+  StripeSettings__PublishableKey = "pk_test_51ONLLSKsFsxQ5wuZkTURhK4O8SMGVvMnEkRnRkN1nhGq4M2PTPxcMTs8M3bXM9YYDG5vYROX7Zv3g8ACckaDJbIS00QnZXife3"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 1024

@@ -10,7 +10,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useAppSelector } from "../store/configureStore";
 import SignedInMenu from "./SignedInMenu";
 
@@ -46,8 +46,15 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
   const { basket } = useAppSelector((state) => state.basket);
   const { user } = useAppSelector((state) => state.account);
   const itemCount = basket?.items.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
-    <AppBar position="static" sx={{ mb: 4 }}>
+    <AppBar 
+      position="sticky" 
+      sx={{ 
+        zIndex: (theme) => theme.zIndex.drawer + 1,
+        backgroundColor: '#a88e69',
+      }}
+    >
       <Toolbar
         sx={{
           display: "flex",
@@ -65,14 +72,14 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
         <List sx={{ display: "flex" }}>
           {midLinks.map(({ title, path }) => (
             <ListItem component={NavLink} to={path} key={path} sx={navStyles}>
-              {title.toUpperCase()}
+              {title}
             </ListItem>
           ))}
         </List>
 
         <Box display="flex" alignItems="center">
           <IconButton
-            component={Link}
+            component={NavLink}
             to="/basket"
             size="large"
             edge="start"
@@ -94,7 +101,7 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
                   key={path}
                   sx={navStyles}
                 >
-                  {title.toUpperCase()}
+                  {title}
                 </ListItem>
               ))}
             </List>
