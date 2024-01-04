@@ -48,11 +48,11 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
   const itemCount = basket?.items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <AppBar 
-      position="sticky" 
-      sx={{ 
+    <AppBar
+      position="sticky"
+      sx={{
         zIndex: (theme) => theme.zIndex.drawer + 1,
-        backgroundColor: '#a88e69',
+        backgroundColor: "#a88e69",
       }}
     >
       <Toolbar
@@ -75,6 +75,11 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
               {title}
             </ListItem>
           ))}
+          {user && user.roles?.includes("Admin") && (
+            <ListItem component={NavLink} to={"/inventory"} sx={navStyles}>
+              AdminProdukt
+            </ListItem>
+          )}
         </List>
 
         <Box display="flex" alignItems="center">

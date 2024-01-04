@@ -1,17 +1,19 @@
-# fly.toml app configuration file generated for vinproppen on 2024-01-03T23:51:23+01:00
+# fly.toml app configuration file generated for vinproppen on 2024-01-04T01:22:44+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = "vinproppen"
-primary_region = "arn"
+primary_region = "ams"
 
 [build]
   image = "henrikferrari/vinproppen:latest"
 
 [env]
-  ASPNETCORE_URLS = "http://+:8080"
-  StripeSettings__PublishableKey = "pk_test_51ONLLSKsFsxQ5wuZkTURhK4O8SMGVvMnEkRnRkN1nhGq4M2PTPxcMTs8M3bXM9YYDG5vYROX7Zv3g8ACckaDJbIS00QnZXife3"
+  ASPNETCORE_URLS="http://+:8080"
+  StripeSettings__PublishableKey="pk_test_51ONLLSKsFsxQ5wuZkTURhK4O8SMGVvMnEkRnRkN1nhGq4M2PTPxcMTs8M3bXM9YYDG5vYROX7Zv3g8ACckaDJbIS00QnZXife3"
+  Cloudinary__CloudName="dxs1oavz5"
+  Cloudinary__ApiKey="351496489866519"
 
 [http_service]
   internal_port = 8080
